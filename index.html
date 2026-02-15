@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Orvex Digital — Sites, Sistemas e Software</title>
+  <meta name="description" content="A Orvex Digital desenvolve sites profissionais, landing pages, catálogos e sistemas/software sob medida. Peça pelo WhatsApp." />
+
+  <!--  prévia ao compartilhar -->
+  <meta property="og:title" content="Orvex Digital — Sites, Sistemas e Software" />
+  <meta property="og:description" content="Sites, landing pages, catálogos e sistemas/software sob medida. Peça pelo WhatsApp." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --brand:#FF7622;
+
+      --bg:#070A12;
+      --bg2:#0B1220;
+
+      --text:#ECF3FF;
+      --muted:rgba(236,243,255,.72);
+      --muted2:rgba(236,243,255,.55);
+
+      --radius:22px;
+      --shadow:0 24px 80px rgba(0,0,0,.45);
+      --ease:cubic-bezier(.22,1,.36,1);
+
+      --max:1140px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 650px at 16% 10%, rgba(255,118,34,.10), transparent 56%),
+        radial-gradient(900px 600px at 86% 15%, rgba(255,255,255,.06), transparent 56%),
+        linear-gradient(180deg, var(--bg2) 0%, var(--bg) 65%, #05060f 100%);
+      overflow-x:hidden;
+    }
+
+    /* grade */
+    body:before{
+      content:"";
+      position:fixed; inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity:.07;
+      mask-image: radial-gradient(circle at 50% 12%, rgba(0,0,0,1), rgba(0,0,0,.18) 58%, rgba(0,0,0,0) 82%);
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+    .container{ width:min(var(--max), calc(100% - 48px)); margin:0 auto; }
+
+    /* HEADER */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(7,10,18,.62);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding: 14px 0;
+    }
+
+    /*  logo quadrada + texto */
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex: 0 0 auto;
+    }
+    .logo-box{
+      width: 88px;
+      height: 88px;
+      border-radius: 24px;
+      background: rgba(244, 244, 244);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 10px 26px rgba(0,0,0,.28);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 8px;
+      overflow:hidden;
+    }
+    .brand-logo{
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* logo inteira */
+    }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+      gap:4px;
+    }
+    .brand-text b{ font-size:14px; letter-spacing:.2px; }
+    .brand-text span{ font-size:12px; color: var(--muted2); }
+
+    /* menu horizontal */
+    .main-nav ul{
+      list-style:none;
+      display:flex;
+      gap:10px;
+      margin:0;
+      padding:0;
+      align-items:center;
+    }
+    .main-nav a{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 9px 11px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: .25s var(--ease);
+      white-space:nowrap;
+    }
+    .main-nav a:hover{
+      color: var(--text);
+      border-color: rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      transform: translate3d(0,-1px,0);
+    }
+
+    .cta{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:flex-end;
+      flex: 0 0 auto;
+    }
+
+    /* botões  */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing:.2px;
+      cursor:pointer;
+      user-select:none;
+      transition: transform .35s var(--ease), background .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease);
+      will-change: transform;
+    }
+    .btn:hover{
+      transform: translate3d(0,-2px,0);
+      border-color: rgba(255,255,255,.22);
+      background: rgba(255,255,255,.09);
+      box-shadow: 0 14px 40px rgba(0,0,0,.25);
+    }
+    .btn:active{ transform: translate3d(0,0,0) scale(.99); }
+
+    .btn.solid{
+      background: var(--brand);
+      border-color: rgba(255,118,34,.95);
+      color: #0b1220;
+      box-shadow: 0 18px 55px rgba(255,118,34,.18);
+    }
+    .btn.solid:hover{
+      filter: brightness(1.03);
+      box-shadow: 0 24px 75px rgba(255,118,34,.22);
+    }
+
+    /* HERO */
+    .hero{ padding: 58px 0 28px; position:relative; z-index:1; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+      align-items:stretch;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--muted);
+      font-size: 13px;
+      width: fit-content;
+    }
+    .dot{
+      width:8px; height:8px; border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(255,118,34,.15);
+    }
+    h1{
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.05;
+      margin: 14px 0 12px;
+      letter-spacing: -1px;
+    }
+    .gradient-text{
+      background: linear-gradient(90deg, var(--text), rgba(236,243,255,.80), rgba(255,118,34,.82));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color: transparent;
+    }
+    .hero p{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+      max-width: 62ch;
+    }
+    .bullets{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin:18px 0 22px;
+    }
+    .pill{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      color: rgba(236,243,255,.90);
+      font-size: 13px;
+    }
+    .check{
+      width:18px; height:18px;
+      border-radius: 999px;
+      background: rgba(255,118,34,.14);
+      border: 1px solid rgba(255,118,34,.35);
+      display:grid;
+      place-items:center;
+      flex:none;
+    }
+    .check svg{ width:12px; height:12px; }
+
+    .hero-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+
+    .hero-card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute; inset:-1px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255,118,34,.16), transparent 40%, rgba(255,255,255,.10), transparent 70%);
+      opacity:.35;
+      pointer-events:none;
+    }
+    .hero-card h3{ margin: 6px 0 6px; font-size: 15px; letter-spacing:.2px; }
+    .hero-card p{ margin: 0 0 14px; color: var(--muted); font-size: 13px; line-height:1.55; }
+    .stat-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .stat{
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.16);
+      transition: transform .55s var(--ease);
+    }
+    .stat:hover{ transform: translate3d(0,-3px,0); }
+    .stat b{ display:block; font-size: 18px; letter-spacing:-.2px; }
+    .stat span{ color: var(--muted2); font-size: 12px; }
+
+    /* SECTIONS */
+    section{ padding: 44px 0; position:relative; z-index:1; }
+    .section-title{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .section-title h2{ margin:0; font-size:22px; letter-spacing:-.4px; }
+    .section-title p{ margin:0; color: var(--muted2); font-size:13px; max-width: 70ch; line-height:1.6; }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 18px 50px rgba(0,0,0,.25);
+      padding: 18px;
+      transition: transform .60s var(--ease), border-color .35s var(--ease), background .35s var(--ease), box-shadow .60s var(--ease);
+      will-change: transform;
+    }
+    .card:hover{
+      transform: translate3d(0,-6px,0);
+      border-color: rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 26px 90px rgba(0,0,0,.36);
+    }
+    .icon{
+      width:40px; height:40px;
+      border-radius:14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      display:grid;
+      place-items:center;
+      margin-bottom:10px;
+    }
+    .icon svg{ width:18px; height:18px; opacity:.95; }
+    .card h3{ margin:0 0 6px; font-size:15px; }
+    .card p{ margin:0; color: var(--muted); font-size:13px; line-height:1.6; }
+
+    /* Pricing kk */
+    .pricing{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:14px;
+      align-items:stretch;
+    }
+    .price{
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      transition: transform .60s var(--ease), box-shadow .60s var(--ease), border-color .35s var(--ease);
+      will-change: transform;
+    }
+    .price:hover{
+      transform: translate3d(0,-6px,0);
+      border-color: rgba(255,255,255,.16);
+      box-shadow: 0 26px 90px rgba(0,0,0,.36);
+    }
+    .price.featured{
+      border-color: rgba(255,118,34,.55);
+      background: rgba(255,118,34,.06);
+      box-shadow: 0 28px 100px rgba(255,118,34,.10);
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.20);
+      color: var(--muted);
+      font-size: 12px;
+      width: fit-content;
+    }
+    .price h3{ margin:10px 0 6px; font-size:16px; }
+    .money{ font-size:26px; letter-spacing:-.6px; margin:6px 0 2px; }
+    .sub{ color: var(--muted2); font-size:12px; margin:0 0 14px; line-height:1.5; }
+
+    .list{ margin:0; padding:0; list-style:none; display:grid; gap:10px; }
+    .list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color: var(--muted);
+      font-size:13px;
+      line-height:1.55;
+    }
+    .mini{
+      width:18px; height:18px;
+      border-radius:999px;
+      background: rgba(34,197,94,.18);
+      border: 1px solid rgba(34,197,94,.35);
+      display:inline-grid;
+      place-items:center;
+      flex: 0 0 18px;
+      margin-top: 2px;
+    }
+    .mini svg{ width:12px; height:12px; }
+    .price .btn{ width:100%; margin-top:14px; }
+
+    /* TESTIMONIALS */
+    .testis{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .quote{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding: 18px;
+      transition: transform .60s var(--ease), box-shadow .60s var(--ease), border-color .35s var(--ease);
+    }
+    .quote:hover{
+      transform: translate3d(0,-6px,0);
+      border-color: rgba(255,255,255,.16);
+      box-shadow: 0 22px 80px rgba(0,0,0,.32);
+    }
+    .stars{ color: rgba(255,118,34,.95); letter-spacing:1px; font-size:14px; }
+    .quote p{ margin:10px 0 12px; color: var(--muted); font-size:13px; line-height:1.6; }
+    .who{ display:flex; gap:10px; align-items:center; }
+    .avatar-img{
+      width:42px; height:42px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
+    }
+    .who b{ display:block; font-size:13px; }
+    .who span{ display:block; color: var(--muted2); font-size:12px; }
+
+    /* FAQ */
+    .faq{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      overflow:hidden;
+    }
+    details{ padding: 14px 16px; border-top: 1px solid rgba(255,255,255,.08); }
+    details:first-child{ border-top:none; }
+    summary{
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      list-style:none;
+      font-weight: 850;
+      font-size: 13px;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+      max-width: 90ch;
+    }
+    .chev{
+      width:28px; height:28px;
+      border-radius:12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.20);
+      display:grid;
+      place-items:center;
+      flex:none;
+      transition: transform .35s var(--ease);
+    }
+    details[open] .chev{ transform: rotate(180deg); }
+
+    /* CTA */
+    .cta-box{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      flex-wrap:wrap;
+    }
+    .cta-box h3{ margin:0 0 6px; font-size:16px; }
+    .cta-box p{ margin:0; color: var(--muted); font-size:13px; line-height:1.6; max-width: 70ch; }
+    .cta-box .actions{ display:flex; gap:10px; flex-wrap:wrap; }
+
+    /* FOOTER */
+    footer{
+      padding: 30px 0 44px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.16);
+      position:relative;
+      z-index:1;
+    }
+    .foot{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 16px;
+      flex-wrap:wrap;
+    }
+    .foot small{ color: var(--muted2); display:block; margin-top:6px; }
+    .links{ display:flex; gap:10px; flex-wrap:wrap; }
+    .links a{
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size:13px;
+      transition: .35s var(--ease);
+    }
+    .links a:hover{ color: var(--text); border-color: rgba(255,255,255,.20); transform: translate3d(0,-2px,0); }
+
+    /* reveal */
+    .reveal{
+      opacity: 0;
+      transform: translate3d(0,14px,0);
+      transition: opacity 950ms var(--ease), transform 950ms var(--ease);
+      transition-delay: var(--d, 0ms);
+      will-change: transform, opacity;
+    }
+    .reveal.in{ opacity: 1; transform: translate3d(0,0,0); }
+
+    /* WhatsApp mini chat top */
+    .wa-fab{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 80;
+      display:flex;
+      flex-direction: column;
+      align-items:flex-end;
+      gap:10px;
+    }
+    .wa-button{
+      width: 56px; height: 56px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.10);
+      box-shadow: 0 18px 60px rgba(0,0,0,.40);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      transition: transform .45s var(--ease), background .35s var(--ease), border-color .35s var(--ease);
+    }
+    .wa-button:hover{
+      transform: translate3d(0,-3px,0);
+      background: rgba(255,118,34,.12);
+      border-color: rgba(255,118,34,.45);
+    }
+    .wa-button svg{ width: 22px; height:22px; opacity:.95; }
+
+    .wa-panel{
+      width: min(340px, calc(100vw - 36px));
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(7,10,18,.78);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 28px 90px rgba(0,0,0,.55);
+      overflow:hidden;
+      display:none;
+      transform-origin: bottom right;
+    }
+    .wa-panel.open{
+      display:block;
+      animation: pop .22s var(--ease);
+    }
+    @keyframes pop{
+      from{ transform: translate3d(0,12px,0) scale(.98); opacity:0; }
+      to{ transform: translate3d(0,0,0) scale(1); opacity:1; }
+    }
+    .wa-head{
+      padding: 12px 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .wa-head b{ font-size: 13px; }
+    .wa-head span{ color: var(--muted2); font-size: 12px; }
+    .wa-close{
+      width: 32px; height:32px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.20);
+      color: var(--text);
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      transition: transform .35s var(--ease);
+    }
+    .wa-close:hover{ transform: scale(1.05); }
+    .wa-body{ padding: 12px; display:grid; gap:10px; }
+    .wa-quick{ display:flex; gap:8px; flex-wrap:wrap; }
+    .wa-chip{
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      font-size: 12px;
+      cursor:pointer;
+      transition: .35s var(--ease);
+    }
+    .wa-chip:hover{
+      color: var(--text);
+      border-color: rgba(255,118,34,.40);
+      background: rgba(255,118,34,.10);
+      transform: translate3d(0,-2px,0);
+    }
+    .wa-input{
+      width: 100%;
+      min-height: 92px;
+      resize: vertical;
+      padding: 10px 10px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      outline:none;
+      font-size: 13px;
+      line-height:1.5;
+    }
+    .wa-actions{ display:flex; gap:10px; }
+    .wa-actions .btn{ flex:1; }
+    .wa-note{ color: var(--muted2); font-size: 12px; line-height:1.45; }
+
+    /* responsive */
+    @media (max-width: 1060px){
+      .pricing{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .main-nav{ display:none; }
+      .grid3{ grid-template-columns: 1fr; }
+      .testis{ grid-template-columns: 1fr; }
+      .pricing{ grid-template-columns: 1fr; }
+      .bullets{ grid-template-columns: 1fr; }
+      .brand-text span{ display:none; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .btn, .card, .price, .quote, .wa-button{ transition:none !important; animation:none !important; }
+      html{ scroll-behavior:auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <!-- ✅ logo hihi.  orvex-logo.jpg na mesma pasta do index.html -->
+      <a class="brand" href="#top" aria-label="Orvex Digital">
+        <div class="logo-box">
+          <img class="brand-logo" src="orvex-logo.jpg" alt="Orvex" />
+        </div>
+        <div class="brand-text">
+          <b>Orvex</b>
+          <span>Digital</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação">
+        <ul>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#planos">Planos</a></li>
+          <li><a href="#avaliacoes">Avaliações</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="cta">
+        <button class="btn" data-wa="Olá! Quero tirar uma dúvida sobre os serviços da Orvex Digital.">Tirar dúvida</button>
+        <button class="btn solid" data-wa="Olá! Tenho interesse em seus serviços. Pode me passar os planos e valores?">Pedir orçamento</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="kicker"><span class="dot"></span> Soluções digitais — sites, sistemas e software</div>
+
+          <h1><span class="gradient-text">Orvex Digital</span> — presença profissional pra sua marca.</h1>
+
+          <p>
+            Criamos <b>sites</b>, <b>landing pages</b>, <b>catálogos</b> e <b>sistemas/software</b> para empresas
+            que querem aumentar autoridade, organizar processos e converter mais clientes.
+          </p>
+
+          <div class="bullets">
+            <div class="pill">
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Design moderno 
+            </div>
+            <div class="pill">
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Sites perfeito tanto pra computador e celular
+            </div>
+            <div class="pill">
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              WhatsApp e CTA prontos
+            </div>
+            <div class="pill">
+              <span class="check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Performance + SEO base
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn" href="#planos">Ver planos</a>
+            <button class="btn solid" data-wa="Olá! Quero um orçamento. Meu nicho é: (nicho). Preciso de: (site/landing/sistema).">Falar agora</button>
+          </div>
+        </div>
+
+        <aside class="hero-card reveal">
+          <h3>Entrega padrão empresa</h3>
+          <p>Processo organizado: briefing → layout → ajustes → publicação.</p>
+
+          <div class="stat-grid">
+            <div class="stat"><b>UX</b><span>Clareza e conversão</span></div>
+            <div class="stat"><b>Mobile</b><span>Experiência perfeita</span></div>
+            <div class="stat"><b>SEO</b><span>Estrutura base</span></div>
+            <div class="stat"><b>Entrega</b><span>Organizada e rápida</span></div>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn solid" style="flex:1" data-wa="Olá! Quero pedir um projeto com a Orvex Digital. Minha empresa é: (nome). Segmento: (segmento).">Pedir agora</button>
+            <button class="btn" style="flex:1" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Contato</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <h2>Serviços</h2>
+            <p>Do site institucional ao software sob medida — com visual profissional e foco em resultado.</p>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2"/><path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Site Institucional</h3>
+            <p>Presença digital forte para sua empresa passar confiança e gerar contatos.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="2"/><path d="M7 9h10M7 12h6M7 15h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Landing Page</h3>
+            <p>Página de conversão com CTA forte, prova social e estrutura para vender.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Catálogo Digital</h3>
+            <p>Serviços/produtos organizados com pedido direto pelo WhatsApp.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="planos">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <h2>Planos</h2>
+            <p>Escolha o tipo de projeto. O botão envia a mensagem pronta no WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="pricing">
+          <article class="price reveal">
+            <div class="tag">Entrada</div>
+            <h3>Institucional Básico</h3>
+            <div class="money">Sob consulta</div>
+            <p class="sub">Para começar com presença profissional e CTA no WhatsApp.</p>
+            <ul class="list">
+              <li><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Seções essenciais (home, serviços, contato)</li>
+              <li><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Responsivo + rápido</li>
+              <li><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>WhatsApp + formulário</li>
+            </ul>
+            <button class="btn solid" data-wa="Olá! Quero o plano INSTITUCIONAL BÁSICO. Meu nicho é: (nicho). Pode me passar valores e prazo?">Quero esse</button>
+          </article>
+
+          <article class="price featured reveal">
+            <div class="tag">Mais vendido</div>
+            <h3>Institucional Pro</h3>
+            <div class="money">Sob consulta</div>
+            <p class="sub">Para empresas que querem autoridade e conversão.</p>
+            <ul class="list">
+              <li><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Copy + prova social</li>
+              <li><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>SEO base + performance</li>
+              <li><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Seções completas</li>
+              <li><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Ajustes inclusos</li>
+            </ul>
+            <button class="btn solid" data-wa="Olá! Quero o plano INSTITUCIONAL PRO. Minha empresa é: (nome). Segmento: (segmento). Pode me passar valores?">Quero esse</button>
+          </article>
+
+          <article class="price reveal">
+            <div class="tag">Conversão</div>
+            <h3>Landing Page</h3>
+            <div class="money">Sob consulta</div>
+            <p class="sub">Oferta, benefícios, prova social e CTA forte.</p>
+            <ul class="list">
+              <li><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Estrutura de conversão</li>
+              <li><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>WhatsApp + formulário</li>
+              <li><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>CTA estratégico</li>
+            </ul>
+            <button class="btn solid" data-wa="Olá! Quero uma LANDING PAGE. Oferta: (o que você vende). Objetivo: (leads/vendas). Pode me passar valores?">Quero esse</button>
+          </article>
+
+          <article class="price reveal">
+            <div class="tag">Sob medida</div>
+            <h3>Sistema / Software</h3>
+            <div class="money">Sob consulta</div>
+            <p class="sub">Automação, gestão e ferramentas para seu negócio.</p>
+            <ul class="list">
+              <li><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Painel admin + banco</li>
+              <li><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Integrações e automações</li>
+              <li><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Fluxos sob medida</li>
+            </ul>
+            <button class="btn solid" data-wa="Olá! Quero um SISTEMA/SOFTWARE sob medida. Preciso de: (descreva). Pode me orientar e passar valores/prazo?">Quero esse</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="avaliacoes">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <h2>Avaliações</h2>
+            <p>Fixas (não mudam nomes nem fotos).</p>
+          </div>
+        </div>
+
+        <div class="testis">
+          <article class="quote reveal">
+            <div class="stars">★★★★★</div>
+            <p>“O site ficou com cara de empresa grande. Comecei a receber mais mensagens no WhatsApp.”</p>
+            <div class="who">
+              <!-- foto fixa klientes -->
+              <img class="avatar-img" loading="lazy" referrerpolicy="no-referrer"
+                   src="https://randomuser.me/api/portraits/men/32.jpg" alt="Bruno Almeida" />
+              <div><b>Bruno Almeida</b><span>Serviços</span></div>
+            </div>
+          </article>
+
+          <article class="quote reveal">
+            <div class="stars">★★★★★</div>
+            <p>“Entrega organizada e layout muito limpo. No celular fica perfeito. Recomendo.”</p>
+            <div class="who">
+              <img class="avatar-img" loading="lazy" referrerpolicy="no-referrer"
+                   src="https://randomuser.me/api/portraits/women/44.jpg" alt="Camila Rocha" />
+              <div><b>Camila Rocha</b><span>Comércio</span></div>
+            </div>
+          </article>
+
+          <article class="quote reveal">
+            <div class="stars">★★★★★</div>
+            <p>“Entenderam meu objetivo e deixaram a página pronta para converter. Ficou profissional.”</p>
+            <div class="who">
+              <img class="avatar-img" loading="lazy" referrerpolicy="no-referrer"
+                   src="https://randomuser.me/api/portraits/men/75.jpg" alt="Gabriel Martins" />
+              <div><b>Gabriel Martins</b><span>Negócio local</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <h2>FAQ</h2>
+            <p>Respostas rápidas e claras (isso converte mais).</p>
+          </div>
+        </div>
+
+        <div class="faq reveal">
+          <details>
+            <summary>Funciona perfeito no celular? <span class="chev">⌄</span></summary>
+            <p>Sim. O layout é responsivo e pensado primeiro para mobile.</p>
+          </details>
+          <details>
+            <summary>O pedido vai pro WhatsApp? <span class="chev">⌄</span></summary>
+            <p>Sim. Botões e mini chat abrem o WhatsApp com a mensagem pronta.</p>
+          </details>
+          <details>
+            <summary>Vocês fazem sistemas e software também? <span class="chev">⌄</span></summary>
+            <p>Sim. Sistemas sob medida com painel admin, automações e integrações.</p>
+          </details>
+          <details>
+            <summary>O que preciso enviar pra começar? <span class="chev">⌄</span></summary>
+            <p>Nome da empresa, serviços/produtos, logo, fotos e referências. Se faltar texto, a gente ajuda.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div>
+            <h3>Quer começar agora?</h3>
+            <p>Me chame no WhatsApp e diga o que você precisa (site, landing, catálogo ou sistema).</p>
+          </div>
+          <div class="actions">
+            <button class="btn solid" data-wa="Olá! Tenho interesse em seus serviços. Quero: (site/landing/catálogo/sistema). Meu nicho é: (nicho).">Chamar no WhatsApp</button>
+            <button class="btn" onclick="window.scrollTo({top:0, behavior:'smooth'})">Voltar ao topo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <b>Orvex Digital</b>
+        <small>Sites • Landing Pages • Catálogos • Sistemas & Software</small>
+        <small>© <span id="year"></span> Orvex Digital. Todos os direitos reservados.</small>
+      </div>
+      <div class="links">
+        <a href="#servicos">Serviços</a>
+        <a href="#planos">Planos</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Mini Chat -->
+  <div class="wa-fab" aria-live="polite">
+    <div class="wa-panel" id="waPanel" role="dialog" aria-label="Mini chat WhatsApp">
+      <div class="wa-head">
+        <div>
+          <b>WhatsApp • Orvex</b><br />
+          <span>Envie uma mensagem rápida</span>
+        </div>
+        <button class="wa-close" id="waClose" aria-label="Fechar">✕</button>
+      </div>
+
+      <div class="wa-body">
+        <div class="wa-quick">
+          <button class="wa-chip" data-q="Olá! Tenho interesse em seus serviços.">Tenho interesse</button>
+          <button class="wa-chip" data-q="Olá! Quero um site institucional para minha empresa.">Site institucional</button>
+          <button class="wa-chip" data-q="Olá! Quero uma landing page para vender mais.">Landing page</button>
+          <button class="wa-chip" data-q="Olá! Preciso de um sistema/software sob medida.">Sistema/Software</button>
+        </div>
+
+        <textarea class="wa-input" id="waMessage" placeholder="Digite sua mensagem…"></textarea>
+
+        <div class="wa-actions">
+          <button class="btn" id="waClear" type="button">Limpar</button>
+          <button class="btn solid" id="waSend" type="button">Enviar</button>
+        </div>
+
+        <div class="wa-note">Você será redirecionado para o WhatsApp com a mensagem pronta.</div>
+      </div>
+    </div>
+
+    <button class="wa-button" id="waToggle" aria-label="Abrir WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M20 12a8 8 0 0 1-12.8 6.4L4 20l1.7-3.1A8 8 0 1 1 20 12z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M9 9c.3 2 3 5 5 5l1-1c.2-.2.6-.2.9 0l1 1c.2.3.2.7-.1.9-1 .8-2.1 1.1-3.4.7-2.6-.8-6.3-4.6-7.1-7.1-.4-1.3-.1-2.4.7-3.4.2-.3.6-.3.9-.1l1 1c.2.3.2.7 0 .9l-1 1z" fill="white" opacity=".95"/>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    const WA_NUMBER = "5511994878379";
+
+    function waUrl(message){
+      const text = encodeURIComponent(message || "Olá! Tenho interesse em seus serviços.");
+      return `https://wa.me/${WA_NUMBER}?text=${text}`;
+    }
+    function goWhatsApp(message){
+      window.open(waUrl(message), "_blank", "noopener,noreferrer");
+    }
+
+    document.querySelectorAll("[data-wa]").forEach(el => {
+      el.addEventListener("click", () => goWhatsApp(el.getAttribute("data-wa")));
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Reveal com stagger suave
+    const reveals = Array.from(document.querySelectorAll(".reveal"));
+    reveals.forEach((el, i) => el.style.setProperty("--d", `${Math.min(i * 70, 420)}ms`));
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("in");
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+
+    // Mini chat
+    const waPanel = document.getElementById("waPanel");
+    const waToggle = document.getElementById("waToggle");
+    const waClose = document.getElementById("waClose");
+    const waMsg = document.getElementById("waMessage");
+    const waSend = document.getElementById("waSend");
+    const waClear = document.getElementById("waClear");
+
+    const togglePanel = () => waPanel.classList.toggle("open");
+    waToggle.addEventListener("click", togglePanel);
+    waClose.addEventListener("click", () => waPanel.classList.remove("open"));
+
+    document.querySelectorAll(".wa-chip").forEach(btn => {
+      btn.addEventListener("click", () => {
+        waMsg.value = btn.getAttribute("data-q");
+        waMsg.focus();
+      });
+    });
+
+    waClear.addEventListener("click", () => waMsg.value = "");
+    waSend.addEventListener("click", () => goWhatsApp(waMsg.value.trim() || "Olá! Tenho interesse em seus serviços."));
+
+    document.addEventListener("click", (e) => {
+      if (!waPanel.classList.contains("open")) return;
+      const inside = waPanel.contains(e.target) || waToggle.contains(e.target);
+      if (!inside) waPanel.classList.remove("open");
+    });
+  </script>
+</body>
+</html>
